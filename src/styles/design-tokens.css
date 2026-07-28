@@ -1,0 +1,146 @@
+@theme {
+  --font-fa: var(--font-yekan), Tahoma, system-ui, sans-serif;
+
+  --color-neutral-900: #15181a;
+  --color-neutral-700: #667880;
+  --color-neutral-600: #859399;
+  --color-neutral-500: #a3aeb3;
+  --color-neutral-400: #c2c9cc;
+  --color-neutral-300: #e0e4e6;
+  --color-neutral-200: #ecf0f2;
+  --color-neutral-100: #f5f7f7;
+  --color-neutral-0: #ffffff;
+
+  --color-brand: #7c49f2;
+  --color-brand-tint: #e5dbfc;
+  --color-brand-a8: #7c49f214;
+  --color-brand-a30: #7c49f24d;
+  --color-brand-a50: #7c49f280;
+
+  --color-info: #19a7e5;
+  --color-info-strong: #1486b7;
+  --color-info-dark: #0f6489;
+  --color-info-accent: #177ee5;
+  --color-info-tint: #d1edfa;
+  --color-info-a8: #19a7e514;
+  --color-info-a50: #19a7e580;
+
+  --color-success: #39bf8d;
+  --color-success-alt: #3dcc96;
+  --color-success-dark: #257a5a;
+  --color-success-tint: #d8f5ea;
+  --color-success-a8: #3dcc9614;
+  --color-success-a30: #3dcc964d;
+  --color-success-a50: #3dcc9680;
+
+  --color-warning: #d9a300;
+  --color-warning-dark: #826200;
+  --color-warning-tint: #f7edcc;
+  --color-warning-a8: #d9a30014;
+  --color-warning-a30: #d9a3004d;
+  --color-warning-a50: #d9a30080;
+
+  --color-danger: #e02d2d;
+  --color-danger-dark: #861b1b;
+  --color-danger-tint: #f9d5d5;
+  --color-danger-a8: #e02d2d14;
+  --color-danger-a50: #e02d2d80;
+
+  --color-overlay-dark-10: #15181a1a;
+  --color-overlay-dark-25: #15181a40;
+  --color-overlay-neutral-8: #66788014;
+  --color-overlay-neutral-40: #66788066;
+  --color-overlay-light-20: #ffffff33;
+  --color-overlay-light-50: #ffffff80;
+
+  --spacing-fa-0_5: 2px;
+  --spacing-fa-1: 4px;
+  --spacing-fa-1_5: 6px;
+  --spacing-fa-2: 8px;
+  --spacing-fa-3: 12px;
+  --spacing-fa-4: 16px;
+  --spacing-fa-5: 20px;
+  --spacing-fa-6: 24px;
+  --spacing-fa-8: 32px;
+  --spacing-fa-10: 40px;
+  --spacing-fa-12: 48px;
+  --spacing-fa-16: 64px;
+  --spacing-fa-20: 80px;
+  --spacing-fa-30: 120px;
+
+  --radius-fa-xs: 4px;
+  --radius-fa-sm: 5px;
+  --radius-fa-md: 8px;
+  --radius-fa-lg: 12px;
+  --radius-fa-xl: 24px;
+  --radius-fa-full: 999px;
+
+  --border-width-fa-1: 1px;
+  --border-width-fa-1_5: 1.5px;
+  --border-width-fa-2: 2px;
+
+  --shadow-l1: 0 0 12px 0 #66788066;
+  --shadow-fa-card: 0 2px 10px 0 #00000026;
+  --shadow-brand-glow: -8px 0 20px 0 #7c49f280;
+
+  --text-h-xl: 24px;
+  --text-h-xl--line-height: 37.2px;
+  --text-h-xl--letter-spacing: -0.18px;
+  --text-h-l: 18px;
+  --text-h-l--line-height: 32px;
+  --text-h-l--letter-spacing: -0.135px;
+  --text-h-m: 16px;
+  --text-h-m--line-height: 30px;
+  --text-h-m--letter-spacing: -0.12px;
+  --text-h-s: 14px;
+  --text-h-s--line-height: 25px;
+  --text-h-s--letter-spacing: -0.105px;
+  --text-h-xs: 12px;
+  --text-h-xs--line-height: 18.6px;
+  --text-h-xs--letter-spacing: -0.09px;
+  --text-h-2xs: 10px;
+  --text-h-2xs--line-height: 15.5px;
+  --text-h-2xs--letter-spacing: -0.075px;
+
+  --text-b-2xl: 20px;
+  --text-b-2xl--line-height: 31px;
+  --text-b-2xl--letter-spacing: -0.15px;
+  --text-b-xl: 18px;
+  --text-b-xl--line-height: 32px;
+  --text-b-xl--letter-spacing: -0.135px;
+  --text-b-l: 16px;
+  --text-b-l--line-height: 28px;
+  --text-b-l--letter-spacing: -0.12px;
+  --text-b-m: 14px;
+  --text-b-m--line-height: 25px;
+  --text-b-m--letter-spacing: -0.105px;
+  --text-b-s: 13px;
+  --text-b-s--line-height: 23px;
+  --text-b-s--letter-spacing: -0.0975px;
+  --text-b-xs: 12px;
+  --text-b-xs--line-height: 18.6px;
+  --text-b-xs--letter-spacing: -0.09px;
+  --text-b-2xs: 10px;
+  --text-b-2xs--line-height: 15.5px;
+  --text-b-2xs--letter-spacing: -0.075px;
+}
+
+:root {
+  --gradient-surface: linear-gradient(to bottom, #ffffff 0%, #ecf0f2 100%);
+  --gradient-brand: linear-gradient(to bottom, #7c49f2 0%, #e5dbfc 100%);
+  --gradient-brand-tint: linear-gradient(to bottom, #e5dbfc 0%, #ffffff 100%);
+  --gradient-info-tint: linear-gradient(to bottom, #d1edfa 0%, #ffffff 100%);
+  --gradient-success-tint: linear-gradient(to bottom, #d8f5ea 0%, #ffffff 100%);
+  --gradient-warning-tint: linear-gradient(to bottom, #f7edcc 0%, #ffffff 100%);
+  --gradient-danger-tint: linear-gradient(to bottom, #f9d5d5 0%, #ffffff 100%);
+  --gradient-info-brand: linear-gradient(to bottom, #d1edfa 0%, #e5dbfc 100%);
+  --gradient-shine: linear-gradient(
+    to right,
+    #ffffff00 0%,
+    #ffffff80 15%,
+    #ffffff0d 32%,
+    #ffffff0d 59%,
+    #ffffff80 79%,
+    #ffffff00 100%
+  );
+}
