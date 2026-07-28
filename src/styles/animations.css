@@ -63,11 +63,17 @@
 }
 
 .paraf-anim-fade-in {
-  animation: paraf-fade-in 1.1s var(--ease-out-soft) both;
+  animation-name: paraf-fade-in;
+  animation-duration: 1.1s;
+  animation-timing-function: var(--ease-out-soft);
+  animation-fill-mode: both;
 }
 
 .paraf-anim-rise-in {
-  animation: paraf-rise-in 0.6s var(--ease-out-soft) both;
+  animation-name: paraf-rise-in;
+  animation-duration: 0.6s;
+  animation-timing-function: var(--ease-out-soft);
+  animation-fill-mode: both;
 }
 
 @keyframes paraf-pulse-scale {
@@ -83,7 +89,10 @@
 }
 
 .paraf-anim-pulse-scale {
-  animation: paraf-pulse-scale 1.5s var(--ease-in-out-soft) infinite;
+  animation-name: paraf-pulse-scale;
+  animation-duration: 1.5s;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-iteration-count: infinite;
   transform-origin: 50% 50%;
   will-change: transform;
 }
@@ -149,59 +158,71 @@
 }
 
 .paraf-anim-confetti-center {
-  animation: paraf-confetti-center 6s var(--ease-in-out-soft) infinite;
+  animation-name: paraf-confetti-center;
+  animation-duration: 6s;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-iteration-count: infinite;
   transform-origin: 50% 50%;
   will-change: transform;
 }
 
 .paraf-anim-confetti-left {
-  animation: paraf-confetti-left 6s var(--ease-in-out-soft) infinite;
+  animation-name: paraf-confetti-left;
+  animation-duration: 6s;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-iteration-count: infinite;
   transform-origin: 100% 50%;
   will-change: transform;
 }
 
 .paraf-anim-confetti-right {
-  animation: paraf-confetti-right 6s var(--ease-in-out-soft) infinite;
+  animation-name: paraf-confetti-right;
+  animation-duration: 6s;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-iteration-count: infinite;
   transform-origin: 0% 50%;
   will-change: transform;
 }
 
-
-@keyframes paraf-spin-fade {
-  0% {
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-  50% {
-    opacity: 0.12;
-    transform: rotateY(180deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotateY(180deg);
-  }
-}
-
 .paraf-anim-spin-fade {
   transform-style: preserve-3d;
+  transition: none;
 }
 
 .group:hover .paraf-anim-spin-fade,
 .group:focus-visible .paraf-anim-spin-fade {
-  animation: paraf-spin-fade 2s var(--ease-in-out-soft);
+  transform: rotateY(180deg);
+  transition: transform 1s var(--ease-in-out-soft);
+}
+
+.paraf-flip-face {
+  backface-visibility: hidden;
+}
+
+.paraf-flip-back {
+  transform: rotateY(180deg);
 }
 
 .paraf-anim-zoom-in {
-  animation: paraf-zoom-in 0.6s var(--ease-out-back) both;
+  animation-name: paraf-zoom-in;
+  animation-duration: 0.6s;
+  animation-timing-function: var(--ease-out-back);
+  animation-fill-mode: both;
 }
 
 .paraf-anim-wiggle {
-  animation: paraf-wiggle 1.65s var(--ease-in-out-soft) infinite;
+  animation-name: paraf-wiggle;
+  animation-duration: 1.65s;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-iteration-count: infinite;
   transform-origin: 50% 85%;
 }
 
 .paraf-anim-wiggle-sm {
-  animation: paraf-wiggle-sm 1.65s var(--ease-in-out-soft) infinite;
+  animation-name: paraf-wiggle-sm;
+  animation-duration: 1.65s;
+  animation-timing-function: var(--ease-in-out-soft);
+  animation-iteration-count: infinite;
   transform-origin: 50% 50%;
 }
 
