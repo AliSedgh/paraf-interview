@@ -95,7 +95,7 @@ export function RecentActivitiesCard({
     <div className="flex w-full max-w-[1006px] min-w-0 flex-col items-center rounded-fa-xl bg-neutral-0 p-fa-6 lg:h-[752px] lg:flex-[1006_1_0] lg:px-fa-8 xl:px-fa-12 xl:py-fa-10">
       <div className="flex w-full max-w-[910px] min-w-0 flex-col items-center gap-fa-6">
         <div className="flex w-full flex-col items-start gap-fa-6">
-          <div className="flex w-full flex-wrap items-center justify-between gap-fa-4">
+          <div className="flex w-full items-end justify-between gap-fa-4">
             <div className="flex min-w-0 flex-wrap items-center gap-fa-4">
               <h2 className="text-h-xl font-bold whitespace-nowrap text-neutral-900">
                 {activitiesTitle}

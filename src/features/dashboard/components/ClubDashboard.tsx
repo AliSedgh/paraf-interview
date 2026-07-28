@@ -73,7 +73,7 @@ export function ClubDashboard() {
           nextLevelTitle={dashboard.level.nextLevelTitle}
           isPending={dashboard.level.isPending}
         >
-          <div className="flex flex-col-reverse items-center gap-fa-6 py-fa-10 min-[1700px]:flex-row min-[1700px]:items-stretch min-[1700px]:justify-center">
+          <div className="flex flex-col lg:flex-row  items-center gap-fa-6 py-fa-10  min-[1700px]:items-stretch min-[1700px]:justify-center">
             <RecentActivitiesCard
               rows={dashboard.activities.rows}
               filters={dashboard.activities.filters}

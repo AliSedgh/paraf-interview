@@ -38,7 +38,6 @@ export function LevelsProgressCard({
   currentScore,
   isPending,
 }: LevelsProgressCardProps) {
-  // برچسب «سطح برنزی» انیمیشن Zoom In دارد؛ باید موقع اسکرول به اینجا اجرا شود.
   const { ref, inView } = useInView<HTMLDivElement>()
   const regular = steps.find((step) => step.state === 'passed')
   const bronze = steps.find((step) => step.state === 'current')
@@ -117,11 +116,11 @@ export function LevelsProgressCard({
                 aria-hidden
                 width={120}
                 height={120}
-                className="paraf-anim-wiggle size-[120px]"
+                className=" size-[120px]"
               />
               <div className="flex w-full flex-col items-center gap-fa-1">
                 <LevelCheck done />
-                <span className="paraf-anim-zoom-in text-[10.5px] leading-[16.27px] font-bold whitespace-nowrap text-neutral-900">
+                <span className="paraf-anim-pulse-scale  leading-[16.27px] font-bold whitespace-nowrap text-neutral-900">
                   {bronze.title}
                 </span>
                 <span className="text-h-s font-semibold text-neutral-500">
@@ -132,7 +131,7 @@ export function LevelsProgressCard({
 
             <div className="flex h-full w-[80px] flex-col items-center justify-end">
               <div className="flex items-center justify-center py-fa-4">
-                <span className="paraf-anim-wiggle-sm flex items-center gap-fa-1 rounded-fa-full bg-brand px-fa-3">
+                <span className="paraf-anim-wiggle flex items-center gap-fa-1 rounded-fa-full bg-brand px-fa-3">
                   <span className="text-h-xl font-semibold text-neutral-0">
                     {formatNumber(currentScore)}
                   </span>

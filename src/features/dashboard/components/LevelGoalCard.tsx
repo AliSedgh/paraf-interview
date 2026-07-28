@@ -12,7 +12,7 @@ export type LevelGoalCardProps = {
 
 export function LevelGoalCard({ scoresToNextLevel, nextLevelTitle }: LevelGoalCardProps) {
   return (
-    <div className="flex h-[157.2px] w-full max-w-[360px] shrink-0 min-[1560px]:w-[360px] flex-col items-center gap-fa-4 rounded-fa-full bg-brand-a8 px-fa-16 py-fa-8 ring-1 ring-white/20 backdrop-blur-[12px] ring-inset">
+    <div className="flex h-[157.2px] w-full max-w-[360px] shrink-0 lg:w-[300px] xl:w-[330px] 2xl:w-[360px] flex-col items-center gap-fa-4 rounded-fa-full bg-brand-a8 px-fa-16 py-fa-8 ring-1 ring-white/20 backdrop-blur-[12px] ring-inset">
       <div className="flex w-full items-center justify-center gap-fa-1_5">
         <span className="text-b-l whitespace-nowrap text-neutral-900">
           امتیاز لازم تا {nextLevelTitle ?? 'سطح بعدی'}

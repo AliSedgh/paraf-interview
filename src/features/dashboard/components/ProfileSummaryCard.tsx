@@ -36,7 +36,7 @@ function Divider() {
   return (
     <span
       aria-hidden
-      className="hidden h-[144px] w-[1.5px] shrink-0 bg-neutral-200 min-[1560px]:block"
+      className="hidden h-[120px] w-[1.5px] shrink-0 bg-neutral-200 lg:block 2xl:h-[144px]"
     />
   )
 }
@@ -58,9 +58,9 @@ export function ProfileSummaryCard({
 }: ProfileSummaryCardProps) {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-fa-4 rounded-fa-xl bg-neutral-0 p-fa-6 ring-[1.5px] ring-neutral-0 ring-inset xl:p-fa-8 2xl:p-fa-10">
-      <div className="flex w-full flex-col items-stretch gap-fa-6 lg:flex-row lg:flex-wrap lg:items-center min-[1560px]:h-[144px] min-[1560px]:flex-nowrap min-[1560px]:gap-fa-10">
-        <div className="flex w-full items-center justify-start gap-fa-6 lg:h-[135px] lg:min-w-[320px] lg:flex-1">
-          <div className="size-32 shrink-0 overflow-hidden rounded-fa-xl border-8 border-neutral-0 bg-neutral-200 shadow-l1">
+      <div className="flex w-full flex-col items-stretch lg:flex-row lg:flex-nowrap lg:items-center  xl:ga 2xl:h-[144px] 2xl:gap-fa-4">
+        <div className="flex w-full min-w-0 items-center justify-start gap-fa-3 lg:h-[135px] lg:flex-1 xl:gap-fa-6">
+          <div className="size-24 shrink-0 overflow-hidden rounded-fa-xl border-[6px] border-neutral-0 bg-neutral-200 shadow-l1 xl:size-32 xl:border-8">
             <Image
               src={profile.avatarSrc}
               alt={profile.name ?? ''}
@@ -71,11 +71,11 @@ export function ProfileSummaryCard({
           </div>
 
           <div className="flex min-w-0 flex-col items-start gap-fa-1_5 lg:min-w-0 lg:flex-1">
-            <div className="flex items-center gap-fa-2">
+            <div className="flex w-full min-w-0 items-center gap-fa-2">
               {profile.isPending || !profile.name ? (
                 <Skeleton className="h-[37px] w-[150px]" />
               ) : (
-                <h2 className="text-h-xl font-semibold whitespace-nowrap text-neutral-900">
+                <h2 className="truncate text-h-l font-semibold text-neutral-900 xl:text-h-xl">
                   {profile.name}
                 </h2>
               )}
@@ -129,14 +129,14 @@ export function ProfileSummaryCard({
 
         <Divider />
 
-        <div className="flex w-full flex-col items-center justify-center gap-fa-3 lg:min-w-[300px] lg:flex-1">
-          <span className="flex items-center gap-fa-1 rounded-fa-full bg-danger-tint px-fa-2 py-[2px]">
+        <div className="flex w-full min-w-0  flex-col items-center justify-center gap-fa-3 lg:flex-1">
+          <span className="flex max-w-full items-start gap-fa-1 rounded-fa-full bg-danger-tint px-fa-3 py-[3px] text-center">
             <CircleAlert
               className="size-4 shrink-0 text-danger/50"
               strokeWidth={ICON_STROKE}
               aria-hidden
             />
-            <span className="text-b-m whitespace-nowrap text-danger">{missionAlert}</span>
+            <span className="text-b-s text-danger xl:text-b-m 2xl:whitespace-nowrap">{missionAlert}</span>
           </span>
 
           <SolidButton
@@ -150,7 +150,7 @@ export function ProfileSummaryCard({
 
         <Divider />
 
-        <div className="flex w-full flex-col justify-center gap-fa-4 min-[1560px]:min-w-0 min-[1560px]:flex-1">
+        <div className="flex w-full min-w-0 flex-col justify-center gap-fa-4 lg:flex-[1.15]">
           <div className="flex flex-col items-stretch gap-fa-4 sm:flex-row sm:items-center sm:gap-fa-6 xl:h-[88px]">
             <div className="flex h-[88px] w-full items-center justify-end gap-fa-2 rounded-fa-xl bg-white/20 px-fa-3 py-fa-3 shadow-l1 sm:min-w-0 sm:flex-1 2xl:px-fa-2">
               <Image
@@ -159,7 +159,7 @@ export function ProfileSummaryCard({
                 aria-hidden
                 width={64}
                 height={64}
-                className="hidden size-14 shrink-0 object-contain sm:block 2xl:size-16"
+                className="hidden size-14 shrink-0 object-contain sm:block lg:hidden 2xl:block 2xl:size-16"
               />
               <div className="flex min-w-0 flex-1 items-end justify-between gap-fa-2 xl:h-[60px]">
                 <div className="flex flex-col items-start justify-center">
@@ -238,7 +238,7 @@ export function ProfileSummaryCard({
                 aria-hidden
                 width={64}
                 height={64}
-                className="hidden size-14 shrink-0 sm:block 2xl:size-16"
+                className="hidden size-14 shrink-0 sm:block lg:hidden 2xl:block 2xl:size-16"
               />
             </div>
           </div>

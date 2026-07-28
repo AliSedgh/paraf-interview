@@ -78,8 +78,8 @@
     transform: scale(1);
   }
   50% {
-    opacity: 0.72;
-    transform: scale(0.93);
+    opacity: 0.42;
+    transform: scale(0.83);
   }
 }
 
@@ -126,7 +126,7 @@
   50%,
   100% {
     opacity: 0;
-    transform: translateX(26px) scale(0.55);
+    transform: translateX(20px) scale(0.55);
   }
   64% {
     opacity: 1;

@@ -37,7 +37,7 @@ export function ActivityChartCard() {
           </p>
         </div>
 
-        <div className="w-full max-w-full overflow-x-auto">
+        <div className="w-full max-w-full">
           <ActivityChart />
         </div>
       </div>

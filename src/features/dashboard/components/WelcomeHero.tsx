@@ -18,21 +18,7 @@ export type WelcomeHeroProps = {
   isPending: boolean
 }
 
-/**
- * هدر خوش‌آمدگویی — نود `2:12975`.
- *
- * کارت همیشه **وسط‌چین** است (`mx-auto max-w-[921px]`) و همه‌ی تزئین‌ها نسبت به
- * خودِ کارت جای‌گذاری شده‌اند، نه نسبت به سکشن. به همین دلیل در هیچ عرضی
- * (لپ‌تاپ، تبلت، موبایل) چیدمان به‌هم نمی‌ریزد و لازم نیست برای هر بریک‌پوینت
- * مختصات مطلق تازه بنویسیم.
- *
- * انیمیشن‌ها:
- * - جام و کیسه‌ی سکه: `Wiggle` بی‌نهایت
- * - لوگوی «پاراف‌کلاب»: پالس دائمی روی `scale`
- * - سه کانفتی: چرخه‌ی ۹ ثانیه‌ای — اول وسطی از پایین کارت بیرون می‌زند، بعد دو
- *   کناری از دو طرف. در حالت پنهان `opacity: 0` می‌شوند تا هیچ گوشه‌ای بیرون
- *   نماند.
- */
+
 export function WelcomeHero({ name, isPending }: WelcomeHeroProps) {
   const { ref, inView } = useInView<HTMLElement>()
 
@@ -40,35 +26,11 @@ export function WelcomeHero({ name, isPending }: WelcomeHeroProps) {
     <section
       ref={ref}
       data-inview={inView}
-      className="relative flex flex-col items-center gap-fa-4 overflow-hidden py-fa-4 lg:min-h-[362px] lg:justify-center lg:py-0"
+      className="relative flex flex-col items-center gap-fa-4  py-fa-4 lg:min-h-[362px] lg:justify-center lg:py-0"
     >
-      {/* موبایل/تبلت — تزئین‌ها بالای کارت، در جریان عادی */}
-      <div className="relative flex h-[150px] w-full shrink-0 items-end justify-center lg:hidden">
-        <Image
-          src="/dashboard/hero-trophy.png"
-          alt=""
-          aria-hidden
-          width={358}
-          height={358}
-          priority
-          className="paraf-anim-wiggle pointer-events-none relative z-10 h-[140px] w-auto select-none"
-        />
-        <Image
-          src="/dashboard/hero-moneybag.png"
-          alt=""
-          aria-hidden
-          width={203}
-          height={203}
-          className="paraf-anim-wiggle pointer-events-none relative z-10 -ml-fa-6 h-[76px] w-auto select-none [animation-delay:-0.55s]"
-        />
-      </div>
-
-      {/* قاب کارت — مرجع همه‌ی تزئین‌های دسکتاپ */}
+     
       <div className="relative mx-auto w-full max-w-[921px]">
-        {/*
-          کانفتی وسط: پشت کارت (`z-0`)، هم‌مرکز با کارت. در حالت پنهان با
-          scale 0.55 داخل ارتفاع کارت جا می‌شود و opacity صفر است.
-        */}
+     
         <Image
           src="/dashboard/hero-confetti.png"
           alt=""
@@ -77,24 +39,16 @@ export function WelcomeHero({ name, isPending }: WelcomeHeroProps) {
           height={336}
           className="paraf-anim-confetti-center pointer-events-none absolute top-1/2 left-1/2 z-0 hidden h-[336px] w-[342px] -translate-y-1/2 select-none lg:block"
         />
-        {/*
-          کانفتی چپ — قرینه‌ی راستی: `z-0` پشت جام (`z-20`) می‌ماند و آفست `mr`
-          طوری تنظیم شده که روی لبه‌ی چپِ جام سوار شود، پس فقط بخش کوچکی از
-          پشت جام بیرون می‌زند. (قبلاً با `z-30` و آفست بزرگ کاملاً جدا از جام
-          در فضای خالی ظاهر می‌شد.)
-        */}
+      
         <Image
           src="/dashboard/hero-confetti.png"
           alt=""
           aria-hidden
           width={342}
           height={336}
-          className="paraf-anim-confetti-left pointer-events-none absolute top-1/2 right-full z-0 mr-[26px] hidden h-[170px] w-[174px] -translate-y-1/2 select-none lg:block xl:mr-[46px] xl:h-[190px] xl:w-[194px] 2xl:mr-[76px]"
+          className="paraf-anim-confetti-left pointer-events-none absolute top-1/2 right-full z-0 hidden h-[170px] w-[174px] -translate-y-1/2 select-none lg:block xl:h-[190px] xl:w-[194px] "
         />
-        {/*
-          کانفتی راست — با `-ml` روی لبه‌ی کارت سوار می‌شود تا فقط بخشی از آن
-          بیرون بزند، نه کل تصویر.
-        */}
+     
         <Image
           src="/dashboard/hero-confetti.png"
           alt=""
@@ -143,12 +97,6 @@ export function WelcomeHero({ name, isPending }: WelcomeHeroProps) {
             </p>
           </div>
         </div>
-
-        {/*
-          جام و کیسه‌ی سکه روی کارت — آفست‌ها نسبت به خودِ کارت‌اند (در طرح جام
-          ۱۸۱.۵px چپ‌ترِ لبه‌ی کارت و کیسه ۱۴.۸px داخل آن است)، پس با جابه‌جا شدن
-          کارت هم‌راهش می‌مانند.
-        */}
         <Image
           src="/dashboard/hero-trophy.png"
           alt=""

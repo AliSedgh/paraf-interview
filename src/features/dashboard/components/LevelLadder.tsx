@@ -6,13 +6,11 @@ import type { LadderStep } from '../types'
 import { Skeleton, focusRing } from './primitives'
 
 export type LevelLadderProps = {
-  /** سطح‌ها از `GET /levels` — مرتب‌شده و از سطح فعلی به بالا. */
   steps: LadderStep[]
   isPending: boolean
 }
 
 export function LevelLadder({ steps, isPending }: LevelLadderProps) {
-  // مثل کارت سطح: به‌جای غیب‌شدن، قاب می‌ماند و اسکلت رندر می‌شود.
   if (!steps.length) {
     return (
       <div className="flex h-[49.08px] items-center gap-fa-3 rounded-fa-md bg-neutral-0 px-fa-3">

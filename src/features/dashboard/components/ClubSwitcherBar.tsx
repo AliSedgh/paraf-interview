@@ -26,7 +26,6 @@ export function ClubSwitcherBar({
   return (
     <div
       className={cn(
-        // موبایل/تبلت: ستونی و مرتب. لپ‌تاپ: ردیفی با فاصله‌های تنگ‌تر تا سمت چپ سرریز نکند.
         'flex w-full flex-col items-start gap-fa-2 px-fa-4 py-fa-3 md:flex-row md:items-center md:justify-between lg:gap-fa-3 xl:h-[56px] xl:gap-fa-4 xl:px-fa-10 xl:py-fa-1',
         'bg-[image:var(--gradient-shine)]',
         'border border-transparent [border-image:linear-gradient(to_right,#ffffff00_0%,#ffffffcc_15%,#ffffff00_32%,#ffffff00_70%,#ffffffcc_85%,#ffffff00_100%)_1]',

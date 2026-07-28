@@ -4,15 +4,21 @@ import { curveCatmullRom } from 'd3-shape'
 import { Zap } from 'lucide-react'
 import { CartesianGrid, Line, LineChart, ReferenceLine, XAxis, YAxis } from 'recharts'
 
+import { useEffect, useRef, useState } from 'react'
+
 import { chartData } from '../mocks'
 
-const W = 554
+
+const DESIGN_W = 554
 const H = 270
 const PLOT_LEFT = 80.25
 const PLOT_RIGHT = 519.96
 const PLOT_TOP = 25.79
 const PLOT_BOTTOM = 228.23
 const POINT_PADDING = 37
+const MIN_W = 300
+const RIGHT_MARGIN = DESIGN_W - PLOT_RIGHT
+const DESIGN_PLOT_W = PLOT_RIGHT - PLOT_LEFT
 
 const GRID_MINOR = [46.36, 86.68, 127.01, 167.33, 207.66]
 const GRID_MAJOR = [25.79, 66.11, 147.58, 187.9]
@@ -25,24 +31,50 @@ const Y_TICKS = [
   { label: '۴۰', top: 139.5, left: 43 },
   { label: '۲۰', top: 179.5, left: 45 },
 ]
-const Y_ZERO = { label: '۰', top: 222.47, right: W - 204.72 + 168 - 31.73 }
+const Y_ZERO = { label: '۰', top: 222.47 }
 
-const X_TICKS = [117.7, 189.93, 263.06, 336.19, 409.8, 482.78]
 const X_TICK_TOP = 234.03
+
+
+function xTicks(width: number, count: number) {
+  const plotW = width - PLOT_LEFT - RIGHT_MARGIN
+  const padding = POINT_PADDING * (plotW / DESIGN_PLOT_W)
+  const step = count > 1 ? (plotW - padding * 2) / (count - 1) : 0
+  return Array.from({ length: count }, (_, i) => PLOT_LEFT + padding + i * step)
+}
 
 const GRADIENT_TOP = 66.16
 const GRADIENT_BOTTOM = 188.05
 
 export function ActivityChart() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [width, setWidth] = useState(DESIGN_W)
+
+  useEffect(() => {
+    const element = containerRef.current
+    if (!element || typeof ResizeObserver === 'undefined') return
+
+    const observer = new ResizeObserver(([entry]) => {
+      const available = entry.contentRect.width
+      if (available > 0) setWidth(Math.max(MIN_W, Math.min(DESIGN_W, available)))
+    })
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [])
+
+  const W = width
+  const ticks = xTicks(W, chartData.length)
+  const pointPadding = POINT_PADDING * ((W - PLOT_LEFT - RIGHT_MARGIN) / DESIGN_PLOT_W)
+
   return (
-    <div className="relative h-[270px] w-[554px] overflow-hidden" dir="ltr">
+    <div ref={containerRef} className="relative h-[270px] w-full overflow-hidden" dir="ltr">
       <LineChart
         width={W}
         height={H}
         data={chartData}
         margin={{
           top: PLOT_TOP,
-          right: W - PLOT_RIGHT,
+          right: RIGHT_MARGIN,
           bottom: H - PLOT_BOTTOM,
           left: PLOT_LEFT,
         }}
@@ -80,7 +112,7 @@ export function ActivityChart() {
         <XAxis
           dataKey="month"
           hide
-          padding={{ left: POINT_PADDING, right: POINT_PADDING }}
+          padding={{ left: pointPadding, right: pointPadding }}
         />
         <YAxis hide domain={[0, 100]} />
 
@@ -112,7 +144,7 @@ export function ActivityChart() {
         {Y_ZERO.label}
       </span>
 
-      {X_TICKS.map((left, i) => (
+      {ticks.map((left, i) => (
         <span
           key={chartData[i].month}
           style={{ top: X_TICK_TOP, left }}
