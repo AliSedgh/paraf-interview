@@ -70,7 +70,6 @@
   animation: paraf-rise-in 0.6s var(--ease-out-soft) both;
 }
 
-/* ── پالس لوگوی «پاراف‌کلاب» — همیشه در حال اجرا، مستقل از in-view ─────── */
 @keyframes paraf-pulse-scale {
   0%,
   100% {
@@ -89,17 +88,6 @@
   will-change: transform;
 }
 
-/*
-  ── کانفتی‌های پشت کارت هیرو ────────────────────────────────────────────
-  یک چرخه‌ی ۹ ثانیه‌ای مشترک بین سه کانفتی:
-  - نیمه‌ی اول: کانفتی وسط خیلی آرام بزرگ می‌شود و از پایین کارت بیرون می‌زند،
-    بعد کوچک می‌شود و برمی‌گردد پشت کارت.
-  - نیمه‌ی دوم: دو کانفتی کناری از دو طرف کارت بیرون می‌آیند، کمی بزرگ می‌شوند
-    و بعد به حالت کوچک برمی‌گردند و می‌روند پشت کارت.
-
-  جابه‌جایی افقیِ وسط (`-50%`) داخل خود keyframe است تا با utility‌های
-  translate تِیل‌ویند تضاد پیدا نکند.
-*/
 @keyframes paraf-confetti-center {
   0%,
   46%,
@@ -113,7 +101,6 @@
   20%,
   27% {
     opacity: 1;
-    /* بدون جابه‌جایی عمودی، تا هم از بالا و هم از پایین کارت بیرون بزند */
     transform: translate(-50%, 0) scale(1.12);
   }
   40% {
@@ -162,37 +149,32 @@
 }
 
 .paraf-anim-confetti-center {
-  animation: paraf-confetti-center 9s var(--ease-in-out-soft) infinite;
+  animation: paraf-confetti-center 6s var(--ease-in-out-soft) infinite;
   transform-origin: 50% 50%;
   will-change: transform;
 }
 
 .paraf-anim-confetti-left {
-  animation: paraf-confetti-left 9s var(--ease-in-out-soft) infinite;
+  animation: paraf-confetti-left 6s var(--ease-in-out-soft) infinite;
   transform-origin: 100% 50%;
   will-change: transform;
 }
 
 .paraf-anim-confetti-right {
-  animation: paraf-confetti-right 9s var(--ease-in-out-soft) infinite;
+  animation: paraf-confetti-right 6s var(--ease-in-out-soft) infinite;
   transform-origin: 0% 50%;
   will-change: transform;
 }
 
-/*
-  ── چرخش ۱۸۰ درجه‌ی محتوای کارت ویژگی‌ها حول محور Y ─────────────────────
-  چرخش با keyframe انجام می‌شود (نه transition) تا مسیر و fade میانی کنترل شود؛
-  لازم است و فقط روی hover/focus اجرا می‌شود. عمداً کند و نرم: ۱.۶ ثانیه
-  ease-in-out همراه با fade در میانه‌ی چرخش.
-*/
+
 @keyframes paraf-spin-fade {
   0% {
     opacity: 1;
     transform: rotateY(0deg);
   }
   50% {
-    opacity: 0.2;
-    transform: rotateY(90deg);
+    opacity: 0.12;
+    transform: rotateY(180deg);
   }
   100% {
     opacity: 1;
@@ -200,14 +182,13 @@
   }
 }
 
-/* چرخش سه‌بعدی است، پس محتوا باید عمق داشته باشد. */
 .paraf-anim-spin-fade {
   transform-style: preserve-3d;
 }
 
 .group:hover .paraf-anim-spin-fade,
 .group:focus-visible .paraf-anim-spin-fade {
-  animation: paraf-spin-fade 1.6s var(--ease-in-out-soft);
+  animation: paraf-spin-fade 2s var(--ease-in-out-soft);
 }
 
 .paraf-anim-zoom-in {
@@ -224,14 +205,6 @@
   transform-origin: 50% 50%;
 }
 
-/*
-  انیمیشن‌های ورودی تا وقتی بخش وارد دید کاربر نشده متوقف می‌مانند. بدون این،
-  یک انیمیشن ۰.۶ ثانیه‌ای روی mount اجرا می‌شود و برای بخش‌های پایین صفحه اصلاً
-  دیده نمی‌شود. `animation-fill-mode: both` باعث می‌شود المان در همان فریم اول
-  (opacity: 0) بماند تا لحظه‌ی اجرا.
-
-  والد با `data-inview="true"` علامت می‌خورد — هوک `useInView`.
-*/
 .paraf-anim-fade-in,
 .paraf-anim-rise-in,
 .paraf-anim-zoom-in {

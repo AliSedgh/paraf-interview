@@ -76,7 +76,6 @@ export function WelcomeHero({ name, isPending }: WelcomeHeroProps) {
                   alt={heroWordmarkAlt}
                   width={388}
                   height={47}
-                  /* پالس همیشگی — مستقل از in-view، فقط scale کم و زیاد می‌شود. */
                   className="paraf-anim-pulse-scale h-auto w-full max-w-[210px] sm:max-w-[249px] xl:max-w-[300px] 2xl:max-w-[388px]"
                 />
               </span>

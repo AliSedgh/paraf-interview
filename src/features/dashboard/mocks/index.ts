@@ -4,8 +4,8 @@ export const heroHeadlineLead = 'به'
 export const heroHeadlineTail = 'خوش اومدی!'
 export const heroWordmarkAlt = 'پاراف‌کلاب (باشگاه مشتریان پاراف)'
 export const heroSubtitleParts: { text: string; bold: boolean }[] = [
-  { text: 'مأموریت', bold: true },
-  { text: '‌هات رو انجام بده؛ هم ', bold: false },
+  { text: 'مأموریت‌هات', bold: true },
+  { text: ' رو انجام بده؛ هم ', bold: false },
   { text: 'سطح ', bold: true },
   { text: 'اعتبارت رو افزایش میدی، هم ', bold: false },
   { text: 'سکه', bold: true },
