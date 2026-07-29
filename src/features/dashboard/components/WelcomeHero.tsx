@@ -7,11 +7,11 @@ import { useInView } from '@/shared/hooks/useInView'
 import {
   heroHeadlineLead,
   heroHeadlineTail,
-  heroSubtitle,
   heroSubtitleParts,
   heroWordmarkAlt,
 } from '../mocks'
 import { Skeleton } from './primitives'
+import { TypingText } from './TypingText'
 
 export type WelcomeHeroProps = {
   name: string | null
@@ -83,16 +83,11 @@ export function WelcomeHero({ name, isPending }: WelcomeHeroProps) {
               </span>
             </h1>
 
-            <p
-              className="paraf-anim-rise-in w-full text-b-s text-neutral-700 [animation-delay:0.45s] xl:text-b-m 2xl:text-b-xl"
-              aria-label={heroSubtitle}
-            >
-              {heroSubtitleParts.map((part, index) => (
-                <span key={index} className={part.bold ? 'font-bold' : 'font-semibold'}>
-                  {part.text}
-                </span>
-              ))}
-            </p>
+            <TypingText
+              parts={heroSubtitleParts}
+              start={inView}
+              className="w-full text-b-s text-neutral-700 xl:text-b-m 2xl:text-b-xl"
+            />
           </div>
         </div>
         <Image
